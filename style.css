@@ -1,0 +1,870 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: ease-in-out 0.2s all;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@font-face {
+  font-family: 'Robot';
+  src: url('fonts/Robot.ttf') format('truetype');
+  
+}
+
+@font-face {
+  font-family: 'Tahoma';
+  src: url('fonts/tahoma.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Norwester';
+  src: url('fonts/norwester.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+    background-image: url(images/porfolio\ bg2.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Your existing navbar */
+.navbar {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 10px 0 0 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar li {
+  color: white;
+  transition: color 0.3s;
+}
+
+.navbar li:hover {
+  color: #9e01ff;
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px; /* move it to the right */
+  z-index: 110;
+}
+
+/* Overlay (background dim) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 150;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Side menu (hidden by default) */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* hidden off the right side */
+  width: 250px;
+  height: 100vh;
+  background: #554546e6;
+  transition: right 0.3s ease;
+  z-index: 200;
+  padding-top: 60px;
+}
+
+.side-menu.active {
+  right: 0; /* visible when active */
+}
+
+
+.side-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.side-menu ul a {
+  text-decoration: none;
+  color: white;
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.side-menu ul li:hover {
+  color: #9e01ff;
+}
+
+
+main{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    /* background-color: black; */
+    
+}
+
+#typing {
+  display: inline-block;
+  border-right: 3px solid #06b6d4;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+main .text{
+    width: 50%;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .text .dev{
+    font-family: tahoma;
+    font-size: 40px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
+main .text p{
+    font-family: tahoma;
+    font-size: 90px;
+    line-height: 0.9;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+main .text h4{
+    margin-top: 10px;
+    font-size: 20px;
+    height: 25px;
+}
+
+.btn{
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn .about{
+    background-color: red;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+}
+
+.btn .about:hover{
+    background-color: rgb(171, 3, 3);
+}
+
+.btn .contact{
+    background-color: #764395;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+}
+
+.btn .contact:hover{
+    background-color: #63049e;
+}
+
+main .pic{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    /* background-color: rgb(101, 60, 8); */
+    
+}
+
+main .pic img{
+    height: 400px;
+}
+
+.aboutme{
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.aboutme .text{
+    width: 50%;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutme .text .dev{
+    font-family: 'Norwester';
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 0px;
+}
+
+.aboutme .text p{
+    font-family: 'Robot';
+    font-size: 50px;
+    line-height: 0.9;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+
+.aboutme .text span{
+    font-family: sans-serif;
+    font-size: 43px;
+}
+
+.aboutme .text h4{
+    margin-top: 10px;
+}
+
+.btn{
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn .skills_btn{
+    background-color: blue;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+}
+
+.btn .skills_btn:hover{
+    background-color: rgb(0, 0, 154);
+}
+
+.btn .contact{
+    background-color: #764395;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+.btn .contact:hover{
+    background-color: #63049d;
+}
+
+.aboutme .pic{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    /* background-color: rgb(101, 60, 8); */
+    
+}
+
+.aboutme .pic img{
+    height: 400px;
+}
+
+.contactme{
+    height: 100vh;
+    background-color: #554546;
+    display: flex;
+    align-items: center;
+}
+
+.contactme .text{
+    width: 50%;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Robot';
+}
+
+.contactme .text h2{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 100;
+    letter-spacing: 0px;
+}
+
+.contactme .text .rd{
+    font-size: 13px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.contactme .text p{
+    font-family: tahoma;
+    font-size: 20px;
+    line-height: 2;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.contactme .text p a:hover{
+    color: rgb(255, 1, 255);
+} 
+
+.btn_contact{
+    margin-top: 10px;
+    display: flex;
+    gap: 30px;
+}
+
+.btn_contact .skills_btn{
+    background-color: blue;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+.btn_contact .skills_btn:hover{
+    background-color: rgb(0, 0, 154);
+}
+
+.btn_contact .contact{
+    background-color: #764395;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    font-family: tahoma;
+    font-weight: bold;
+}
+
+.btn_contact .contact:hover{
+    background-color: #6e05af;
+}
+
+.contactme .pic{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    /* background-color: rgb(101, 60, 8); */
+    
+}
+
+.contactme .pic img{
+    height: 400px;
+}
+
+.myskills{
+    height: 100vh;
+    background-color: #554546c7;
+    display: flex;
+    align-items: center;
+}
+
+.skill_container{
+    width: 50%;
+    /* height: 80vh; */
+    /* background-color: #06b6d4; */
+}
+
+.skills {
+  width: 400px;
+  margin: 100px auto;
+  color: white;
+}
+
+.skill {
+  margin: 25px 0;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  
+}
+
+.skill-label p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.percent {
+  font-weight: 600;
+  color: white;
+}
+
+.progress-bar {
+  background: #1e293b;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 15px;
+}
+
+.progress {
+  height: 100%;
+  border-radius: 20px;
+  background: #9e01ff;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+.skills_icons{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: violet; */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* padding-top: 100px; */
+}
+
+.s1{
+    display: flex;
+    gap: 30px;
+}
+
+.s1 img{
+    height: 80px;
+}
+
+.s1 h3{
+    font-family: 'Norwester';
+    font-size: 25px;
+    color: white;
+}
+
+.myprojects{
+    height: 100vh;
+    justify-content: center;
+}
+
+.myprojects h2{
+    text-align: center;
+    font-family: 'Norwester';
+    font-size: 50px;
+    font-weight: 100;
+    letter-spacing: 0px;
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.myprojects p{
+    text-align: center;
+    font-family: tahoma;
+    font-size: 20px;
+    color: white;
+}
+
+.slider {
+  position: relative;
+  width: 80%;
+  max-width: 700px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  flex: 0 0 100%;
+}
+
+.slide img {
+  width: 100%;
+  display: block;
+  margin: 0;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.arrow:hover { background: rgba(0,0,0,0.8); }
+
+.web3{
+    display: flex;
+    justify-content: center;
+}
+
+.web3 button{
+    background-color: #9e01ff;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.web3 button:hover{
+    background-color: #7104b5;
+}
+
+@media (max-width:1100px) {
+main .text .dev{
+    font-size: 25px;
+}
+
+main .text p{
+    font-size: 70px;
+}
+
+main .text h4{
+    margin-top: 10px;
+    font-size: 15px;
+    height: 20px;
+}
+
+main .pic img{
+    height: 300px;
+}
+
+.aboutme .text .dev{
+    font-family: 'Norwester';
+    font-size: 10px;
+}
+
+.aboutme .text p{
+    font-size: 30px;
+}
+
+.aboutme .text span{
+    font-size: 30px;
+}
+
+.aboutme .text h4{
+    font-size: 15px;
+}
+
+.aboutme .pic img{
+    height: 300px;
+}
+
+.contactme .text h2{
+    text-align: center;
+    font-size: 30px;
+}
+
+.contactme .text .rd{
+    font-size: 9px;
+}
+
+.contactme .text p{
+    font-size: 15px;
+}
+
+.contactme .pic img{
+    height: 300px;
+}
+
+.skills {
+  width: 250px;
+  margin: 100px auto;
+  color: white;
+}
+
+.s1 img{
+    height: 60px;
+}
+
+.s1 h3{
+    font-size: 15px;
+}
+
+.myprojects h2{
+    font-size: 30px;
+}
+
+.myprojects p{
+    font-size: 15px;
+}
+}
+
+@media (max-width:850px) {
+main .text .dev{
+    font-size: 20px;
+}
+
+main .text p{
+    font-size: 50px;
+}
+
+main .text h4{
+    font-size: 13px;
+    height: 15px;
+}
+
+main .pic img{
+    height: 250px;
+}
+
+.aboutme .text .dev{
+    font-family: 'Norwester';
+    font-size: 10px;
+}
+
+.aboutme .text p{
+    font-size: 20px;
+}
+
+.aboutme .text span{
+    font-size: 20px;
+}
+
+.aboutme .text h4{
+    font-size: 12px;
+}
+
+.aboutme .pic img{
+    height: 250px;
+}
+
+.contactme .text h2{
+    text-align: center;
+    font-size: 25px;
+}
+
+.contactme .text .rd{
+    font-size: 7px;
+}
+
+.contactme .text p{
+    font-size: 12px;
+}
+
+.contactme .pic img{
+    height: 250px;
+}
+
+.skills {
+  width: 250px;
+  margin: 100px auto;
+  color: white;
+}
+
+.s1 img{
+    height: 50px;
+}
+
+.s1 h3{
+    font-size: 13px;
+}
+
+.myprojects h2{
+    font-size: 30px;
+}
+
+.myprojects p{
+    font-size: 15px;
+}
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+@media (max-width:670px) {
+main{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    /* background-color: black; */
+    
+}
+
+main .text{
+    width: 100%;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main .pic{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-color: rgb(101, 60, 8); */
+    
+}
+
+main .text .dev{
+    font-family: tahoma;
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    margin-top: 20px;
+}
+
+.aboutme{
+    height: 70vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.aboutme .text{
+    width: 100%;
+    margin-top: 20px;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutme .pic{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* background-color: rgb(101, 60, 8); */
+    
+}
+
+.contactme{
+    height: 80vh;
+    background-color: #554546;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactme .text{
+    width: 100%;
+    /* background-color: bisque; */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Robot';
+}
+
+.contactme .pic{
+    display: none;
+}
+
+.myskills{
+    height: 100vh;
+    background-color: #554546c7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.skill_container{
+    width: 100%;
+    /* height: 80vh; */
+    /* background-color: #06b6d4; */
+}
+
+.skills_icons{
+    width: 100%;
+}
+
+.myprojects{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+}
