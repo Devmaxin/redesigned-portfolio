@@ -337,7 +337,6 @@ main .pic img{
 
 .contactme{
     height: 100vh;
-    background-color: #554546;
     display: flex;
     align-items: center;
 }
@@ -425,7 +424,6 @@ main .pic img{
 
 .myskills{
     height: 100vh;
-    background-color: #554546c7;
     display: flex;
     align-items: center;
 }
@@ -468,7 +466,7 @@ main .pic img{
   background: #1e293b;
   border-radius: 20px;
   overflow: hidden;
-  height: 15px;
+  height: 12px;
 }
 
 .progress {
@@ -758,7 +756,7 @@ main .pic img{
   }
 }
 
-@media (max-width:670px) {
+@media (max-width:768px) {
 main{
     display: flex;
     flex-direction: column-reverse;
@@ -795,7 +793,7 @@ main .text .dev{
 }
 
 .aboutme{
-    height: 70vh;
+    height: 60vh;
     background-color: transparent;
     display: flex;
     flex-direction: column-reverse;
@@ -821,8 +819,7 @@ main .text .dev{
 }
 
 .contactme{
-    height: 80vh;
-    background-color: #554546;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -845,10 +842,9 @@ main .text .dev{
 
 .myskills{
     height: 100vh;
-    background-color: #554546c7;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
 }
 
 .skill_container{
