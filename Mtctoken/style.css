@@ -1,0 +1,321 @@
+*{
+    margin: 0;
+    padding: 0;
+    transition: ease-in-out 0.2s all;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@font-face {
+  font-family: 'Robot';
+  src: url('../fonts/Robot.ttf') format('truetype');
+  
+}
+
+@font-face {
+  font-family: 'Tahoma';
+  src: url('../fonts/tahoma.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Norwester';
+  src: url('../fonts/norwester.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+    background-image: url(images/porfolio\ bg2.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Your existing navbar */
+.navbar {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 10px 0 0 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar li {
+  color: rgb(73, 0, 128);
+  transition: color 0.3s;
+}
+
+.navbar li:hover {
+  color: rgb(42, 2, 73);
+}
+
+/* Hamburger icon */
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: rgb(73, 0, 128);
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  right: 15px; /* move it to the right */
+  z-index: 110;
+}
+
+/* Overlay (background dim) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 150;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Side menu (hidden by default) */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* hidden off the right side */
+  width: 250px;
+  height: 100vh;
+  background: #fefcff;
+  transition: right 0.3s ease;
+  z-index: 200;
+  padding-top: 60px;
+}
+
+.side-menu.active {
+  right: 0; /* visible when active */
+}
+
+
+.side-menu .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+.side-menu ul a {
+  text-decoration: none;
+  color: rgb(73, 0, 128);
+}
+
+.side-menu ul li {
+  margin: 20px 0;
+  font-size: 1.2rem;
+}
+
+.side-menu ul li:hover {
+  color: rgb(42, 1, 74);
+}
+
+main{
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    /* background-color: black; */
+    
+}
+
+main .text{
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .text .h1{
+    font-size: 60px;
+    color: rgb(73, 0, 128);
+    font-family: 'Norwester', sans-serif;
+    margin-bottom: 10px;
+}
+
+main .text p{
+    font-size: 18px;
+    color: black;
+    font-family: 'Tahoma', sans-serif;
+    margin-bottom: 20px;
+}
+
+main .pic{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+main .pic img{
+    height: 300px;
+}
+
+
+main .btn{
+    display: flex;
+    gap: 20px;
+}
+
+main .btn .view{
+    border: none;
+    padding: 10px;
+    background-color: rgb(73, 0, 128);
+    color: white;
+    border-radius: 15px;
+    font-family: tahoma;
+}
+
+main .btn .view:hover{
+    background-color: rgb(43, 1, 75);
+    cursor: pointer;
+}
+
+main .btn .explore{
+    border: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    font-family: tahoma;
+    
+}
+
+main .btn .explore:hover{
+    background-color: black;
+    cursor: pointer;
+}
+
+@media (max-width: 1130px) {
+  main .text .h1 {
+    font-size: 40px;
+  }
+
+  main .text p{
+    font-size: 13px;
+}
+
+  main .pic img {
+    height: 300px;
+  }
+
+  main .btn .view{
+    border: none;
+    padding: 10px;
+    font-size: 10px;
+}
+
+main .btn .explore{
+    border: none;
+    padding: 10px;
+    font-size: 10px;
+    
+}
+}
+
+@media (max-width:830px) {
+    main .text .h1 {
+    font-size: 35px;
+  }
+
+  main .text p{
+    font-size: 11px;
+}
+
+  main .pic img {
+    height: 250px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .text{
+    width: 100vw;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .text .h1{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Norwester', sans-serif;
+    margin-bottom: 10px;
+}
+
+main .text p{
+    font-size: 12px;
+    padding: 10px;
+}
+
+main .pic{
+    margin-top: 20px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    
+    /* background-color: tomato; */
+}
+
+main .pic img{
+    height: 200px;
+}
+}
